@@ -2,10 +2,12 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { FiPhone, FiMessageCircle } from 'react-icons/fi'
+import Header from '../components/Header/Header'
 
 export default function Home() {
   return (
     <div className={styles.homeContainer}>
+      <Header buttonLeft={false} title={''} buttonRight={true} />
       <div className={styles.imageCaroussel}></div>
       <div className={styles.contentContainer}>
         <div className={styles.salonInfosContainer}>

@@ -1,4 +1,4 @@
-import Bottom from '../components/Bottom'
+import Bottom from '../components/Bottom/Bottom'
 import './globals.css'
 
 export default function RootLayout({
