@@ -1,146 +1,136 @@
-.container {
-  padding: 0 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+.homeContainer {
+  background-color: #fafafa;
+  height: 100%;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+.imageCaroussel {
+  width: 100%;
+  height: 330px;
+  background-color: #ded7d1;
+}
+
+.contentContainer {
+  padding: 14px;
+}
+
+.salonInfosContainer {
+  margin-bottom: 30px;
+}
+
+.salonName {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 1px;
+  color: #43403d;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1px;
+  color: #a09d99;
+}
+
+.listButtons {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.button {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 14px;
+  gap: 14px;
+  border-radius: 14px;
+  background-color: #ffffff;
 }
 
-.footer {
+.logoContainer {
+  width: 58px;
+  height: 58px;
+  background: #f1f2f4;
+  border-radius: 14px;
   display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-  font-style: normal;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-}
-
-.title a {
-  text-decoration: none;
-  color: #0070f3;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title,
-.description {
+.buttonLabel {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
   text-align: center;
+  letter-spacing: 1px;
+  color: #43403d;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.sectionSpectialists {
+  /*  display: flex;
+  flex-direction: column;
+  align-items: flex-start; */
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.sectionSpecialistsTitle {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 1px;
+  color: #43403d;
+  margin-bottom: 30px;
 }
 
-.grid {
+.listSpecialists {
+  list-style: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 1200px;
-}
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
+  gap: 14px;
+  padding: 0;
+  justify-content: flex-start;
+  overflow-x: auto;
   margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+.listSpecialists::-webkit-scrollbar {
+  display: none;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.specialist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 108px;
+  padding: 14px;
+  gap: 14px;
+  border-radius: 14px;
+  background-color: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  .title {
-    background: linear-gradient(180deg, #ffffff 0%, #aaaaaa 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-  }
-  .title a {
-    background: linear-gradient(180deg, #0070f3 0%, #0153af 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-  }
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
-  }
+.imageSpecialist {
+  width: 80px;
+  height: 80px;
+  border-radius: 14px;
+  background-color: #ded7d1;
+}
+
+.specialistName {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #43403d;
 }
