@@ -1,15 +1,17 @@
 .bottomContainer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
   height: 108px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fafafa;
+  background-color: #ffffff;
 }
 
 .bottomButton {
   width: 386px;
-  height: 48px;
+  padding: 18px;
   background: #fb7400;
   border-radius: 24px;
   border: none;

@@ -1,9 +1,17 @@
+import Link from 'next/link'
 import React from 'react'
 import styles from './bottom.module.css'
-const Bottom = () => {
+
+interface bottomProps {
+  href: string
+  label: string
+}
+const Bottom = ({ href, label }: bottomProps) => {
   return (
     <div className={styles.bottomContainer}>
-      <button className={styles.bottomButton}>Book now</button>
+      <Link href={href} className={styles.bottomButton}>
+        {label}
+      </Link>
     </div>
   )
 }

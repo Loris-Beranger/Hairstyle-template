@@ -1,0 +1,23 @@
+.servicesContainer {
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  background-color: #fafafa;
+}
+
+.sectionListServices {
+  padding: 14px 14px 0 14px;
+}
+
+.listServices {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  height: 700px;
+  padding-bottom: 108px;
+}
+.listServices::-webkit-scrollbar {
+  display: none;
+}

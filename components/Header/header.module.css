@@ -15,21 +15,27 @@
   text-align: center;
   letter-spacing: 1px;
   color: #43403d;
+}
+.headerTitleWhite {
   color: white;
 }
 
 .buttonBack {
   background-color: transparent;
   border: none;
-  color: white;
   position: absolute;
   left: 10px;
+}
+.buttonBackWhite {
+  color: white;
 }
 
 .buttonAccount {
   background-color: transparent;
   border: none;
-  color: white;
   position: absolute;
   right: 10px;
+}
+.buttonAccountWhite {
+  color: white;
 }

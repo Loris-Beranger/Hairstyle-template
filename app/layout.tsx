@@ -1,4 +1,3 @@
-import Bottom from '../components/Bottom/Bottom'
 import './globals.css'
 
 export default function RootLayout({
@@ -15,7 +14,6 @@ export default function RootLayout({
       <head />
       <body>
         <main>{children}</main>
-        <Bottom />
       </body>
     </html>
   )

@@ -3,11 +3,18 @@ import styles from './page.module.css'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { FiPhone, FiMessageCircle } from 'react-icons/fi'
 import Header from '../components/Header/Header'
+import Bottom from '../components/Bottom/Bottom'
 
 export default function Home() {
   return (
     <div className={styles.homeContainer}>
-      <Header buttonLeft={false} title={''} buttonRight={true} />
+      <Header
+        buttonLeft={false}
+        buttonLeftHref={''}
+        title={''}
+        buttonRight={true}
+        isWhite={true}
+      />
       <div className={styles.imageCaroussel}></div>
       <div className={styles.contentContainer}>
         <div className={styles.salonInfosContainer}>
@@ -66,6 +73,7 @@ export default function Home() {
           </ul>
         </section>
       </div>
+      <Bottom href="/services" label={'Book now'} />
     </div>
   )
 }
