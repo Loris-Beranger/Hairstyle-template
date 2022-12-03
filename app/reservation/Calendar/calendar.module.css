@@ -1,0 +1,79 @@
+.calendarContainer {
+  background: #ffffff;
+  box-shadow: 0px 2px 48px rgba(0, 0, 0, 0.04);
+  border-radius: 14px;
+  padding: 0 14px;
+}
+
+.topContent {
+}
+
+.navigationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  gap: 60px;
+}
+
+.monthTitle {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #43403d;
+}
+
+.buttonsTab {
+  color: #d4d0cd;
+  font-size: 20px;
+}
+
+.listDayContainer {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f6f6f6;
+  padding-bottom: 13px;
+}
+
+.listDayContainer span {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #43403d;
+  padding: 4px 8px;
+  width: 42px;
+}
+
+.mainContentContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 calc((100% - 294px) / 6);
+  justify-content: flex-start;
+}
+
+.day {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #a09d99;
+  border-radius: 24.5px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.daySelect {
+  background: #394574;
+  color: white;
+}
+.currentDay {
+  color: #fb7400;
+}

@@ -1,0 +1,33 @@
+.specialist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 108px;
+  padding: 14px;
+  gap: 14px;
+  border-radius: 14px;
+  background-color: #ffffff;
+}
+.specialistSelect {
+  background-color: #394574;
+}
+
+.imageSpecialist {
+  width: 80px;
+  height: 80px;
+  border-radius: 14px;
+  background-color: #ded7d1;
+}
+
+.specialistName {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #43403d;
+}
+.specialistNameSelect {
+  color: white;
+}

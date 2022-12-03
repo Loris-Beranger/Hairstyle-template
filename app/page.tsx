@@ -4,6 +4,8 @@ import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { FiPhone, FiMessageCircle } from 'react-icons/fi'
 import Header from '../components/Header/Header'
 import Bottom from '../components/Bottom/Bottom'
+import SpecialistCard from '../components/SpecialistCard/SpecialistCard'
+import { specialists } from './reservation/Calendar/data'
 
 export default function Home() {
   return (
@@ -46,30 +48,9 @@ export default function Home() {
         <section className={styles.sectionSpectialists}>
           <h2 className={styles.sectionSpecialistsTitle}>Our specialists</h2>
           <ul className={styles.listSpecialists}>
-            <li className={styles.specialist}>
-              <div className={styles.imageSpecialist}></div>
-              <span className={styles.specialistName}>Miles</span>
-            </li>
-            <li className={styles.specialist}>
-              <div className={styles.imageSpecialist}></div>
-              <span className={styles.specialistName}>Gibson</span>
-            </li>
-            <li className={styles.specialist}>
-              <div className={styles.imageSpecialist}></div>
-              <span className={styles.specialistName}>Weir</span>
-            </li>
-            <li className={styles.specialist}>
-              <div className={styles.imageSpecialist}></div>
-              <span className={styles.specialistName}>Justin</span>
-            </li>
-            <li className={styles.specialist}>
-              <div className={styles.imageSpecialist}></div>
-              <span className={styles.specialistName}>Mike</span>
-            </li>
-            <li className={styles.specialist}>
-              <div className={styles.imageSpecialist}></div>
-              <span className={styles.specialistName}>Tyler</span>
-            </li>
+            {specialists.map((specialist, index) => (
+              <SpecialistCard key={index} name={specialist} selected={false} />
+            ))}
           </ul>
         </section>
       </div>

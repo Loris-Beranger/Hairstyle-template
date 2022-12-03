@@ -1,0 +1,64 @@
+.reservationContainer {
+  padding-top: 100px;
+}
+
+.mainContentReservation {
+  padding: 0 14px 14px 14px;
+}
+
+.mainContentReservation section {
+  margin-bottom: 14px;
+}
+
+.sectionTitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 1px;
+  color: #43403d;
+  margin: 0 0 20px 0;
+}
+
+.listHours {
+  list-style: none;
+  display: flex;
+  overflow-x: auto;
+  padding: 0;
+  gap: 14px;
+  margin: 0;
+}
+.listHours::-webkit-scrollbar {
+  display: none;
+}
+
+.hour {
+  display: inline-flex;
+  background: #f1f0ef;
+  border-radius: 14px;
+  padding: 14px;
+  white-space: nowrap;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #43403d;
+}
+
+.hourSelect {
+  background: #fb7400;
+  color: white;
+}
+
+.listSpecialists {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  padding: 0;
+  justify-content: flex-start;
+  overflow-x: auto;
+  margin: 0;
+}
+.listSpecialists::-webkit-scrollbar {
+  display: none;
+}

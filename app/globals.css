@@ -19,6 +19,7 @@ body {
 
 main {
   height: 100%;
+  background-color: #fafafa;
 }
 main > div {
   height: 100%;

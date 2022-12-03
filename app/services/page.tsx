@@ -26,7 +26,7 @@ const Services = () => {
           <ServiceCard />
         </ul>
       </section>
-      <Bottom href="/services" label={'Apply'} />
+      <Bottom href="/reservation" label={'Apply'} />
     </div>
   )
 }

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 .homeContainer {
-  background-color: #fafafa;
   height: 100%;
 }
 
@@ -16,7 +15,7 @@
 }
 
 .salonInfosContainer {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .salonName {
@@ -44,7 +43,7 @@
   list-style: none;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 30px;
+  margin: 10px 0;
 }
 
 .button {
@@ -90,7 +89,7 @@
   line-height: 19px;
   letter-spacing: 1px;
   color: #43403d;
-  margin-bottom: 30px;
+  margin: 14px 0;
 }
 
 .listSpecialists {
@@ -105,32 +104,4 @@
 
 .listSpecialists::-webkit-scrollbar {
   display: none;
-}
-
-.specialist {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 108px;
-  padding: 14px;
-  gap: 14px;
-  border-radius: 14px;
-  background-color: #ffffff;
-}
-
-.imageSpecialist {
-  width: 80px;
-  height: 80px;
-  border-radius: 14px;
-  background-color: #ded7d1;
-}
-
-.specialistName {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: center;
-  letter-spacing: 1px;
-  color: #43403d;
 }
