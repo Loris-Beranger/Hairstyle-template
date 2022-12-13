@@ -5,6 +5,17 @@
   padding: 0 14px;
 }
 
+.loadingContainer {
+  background: #ffffff;
+  box-shadow: 0px 2px 48px rgba(0, 0, 0, 0.04);
+  border-radius: 14px;
+  padding: 0 14px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .topContent {
 }
 
@@ -14,6 +25,7 @@
   align-items: center;
   flex: 1;
   gap: 60px;
+  position: relative;
 }
 
 .monthTitle {
@@ -28,6 +40,16 @@
 .buttonsTab {
   color: #d4d0cd;
   font-size: 20px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.buttonsTab:first-child {
+  left: 60px;
+}
+.buttonsTab:last-child {
+  right: 60px;
 }
 
 .listDayContainer {
@@ -61,7 +83,7 @@
   line-height: 17px;
   text-align: center;
   letter-spacing: 1px;
-  color: #a09d99;
+  color: #8a8783;
   border-radius: 24.5px;
   width: 42px;
   height: 42px;
@@ -76,4 +98,7 @@
 }
 .currentDay {
   color: #fb7400;
+}
+.dayOut {
+  color: #bcbab7d3;
 }

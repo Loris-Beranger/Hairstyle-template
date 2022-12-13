@@ -4,10 +4,15 @@ import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { FiPhone, FiMessageCircle } from 'react-icons/fi'
 import Header from '../components/Header/Header'
 import Bottom from '../components/Bottom/Bottom'
-import SpecialistCard from '../components/SpecialistCard/SpecialistCard'
+import SpecialistCard from '../components/SpecialistList/SpecialistCard/SpecialistCard'
 import { specialists } from './reservation/Calendar/data'
+import SpecialistList from '../components/SpecialistList/SpecialistList'
+import { prisma } from '../components/data'
 
-export default function Home() {
+export default async function Home() {
+  const specialists = await prisma.specialist.findMany()
+  console.log(specialists)
+
   return (
     <div className={styles.homeContainer}>
       <Header
@@ -47,11 +52,7 @@ export default function Home() {
         </ul>
         <section className={styles.sectionSpectialists}>
           <h2 className={styles.sectionSpecialistsTitle}>Our specialists</h2>
-          <ul className={styles.listSpecialists}>
-            {specialists.map((specialist, index) => (
-              <SpecialistCard key={index} name={specialist} selected={false} />
-            ))}
-          </ul>
+          <SpecialistList data={specialists} />
         </section>
       </div>
       <Bottom href="/services" label={'Book now'} />

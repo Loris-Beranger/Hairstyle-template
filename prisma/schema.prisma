@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Order {
+  id           String      @id @default(cuid())
+  date         DateTime
+  user         String
+  prestation   String
+  duration     Int
+  status       String
+  specialist   Specialist? @relation(fields: [specialistId], references: [id])
+  specialistId String?
+}
+
+model Specialist {
+  id    String  @id @default(cuid())
+  name  String
+  image String
+  Order Order[]
+}

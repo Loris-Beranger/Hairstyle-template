@@ -1,3 +1,7 @@
+import { PrismaClient } from '@prisma/client'
+
+export const prisma = new PrismaClient()
+
 export const orderList = [
   {
     date: new Date('Thu Dec 08 2022 08:00:00'),

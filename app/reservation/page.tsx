@@ -3,7 +3,8 @@
 import React, { useState } from 'react'
 import Bottom from '../../components/Bottom/Bottom'
 import Header from '../../components/Header/Header'
-import SpecialistCard from '../../components/SpecialistCard/SpecialistCard'
+import SpecialistCard from '../../components/SpecialistList/SpecialistCard/SpecialistCard'
+import SpecialistList from '../../components/SpecialistList/SpecialistList'
 import Calendar from './Calendar/Calendar'
 import { hours, specialists } from './Calendar/data'
 import styles from './page.module.css'
@@ -30,33 +31,25 @@ const Reservation = () => {
         <section className={styles.sectionTime}>
           <h4 className={styles.sectionTitle}>Select Time</h4>
           <ul className={styles.listHours}>
-            {listHours.map((hour, index) => (
-              <li
-                className={
-                  selectHour === hour
-                    ? styles.hourSelect + ' ' + styles.hour
-                    : styles.hour
-                }
-                key={index}
-                onClick={() => setSelectHour(hour)}
-              >
-                {hour}
-              </li>
-            ))}
+            {listHours &&
+              listHours.map((hour, index) => (
+                <li
+                  className={
+                    selectHour === hour
+                      ? styles.hourSelect + ' ' + styles.hour
+                      : styles.hour
+                  }
+                  key={index}
+                  onClick={() => setSelectHour(hour)}
+                >
+                  {hour}
+                </li>
+              ))}
           </ul>
         </section>
         <section className={styles.sectionSpecialist}>
           <h4 className={styles.sectionTitle}>Select Specialist</h4>
-          <ul className={styles.listSpecialists}>
-            {specialists.map((specialist, index) => (
-              <SpecialistCard
-                key={index}
-                name={specialist}
-                selected={selectSpecialist === specialist}
-                setSelectSpecialist={setSelectSpecialist}
-              />
-            ))}
-          </ul>
+          {/* <SpecialistList /> */}
         </section>
       </div>
       <Bottom href="/" label={'Continue'} />

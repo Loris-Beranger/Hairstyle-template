@@ -91,17 +91,3 @@
   color: #43403d;
   margin: 14px 0;
 }
-
-.listSpecialists {
-  list-style: none;
-  display: flex;
-  gap: 14px;
-  padding: 0;
-  justify-content: flex-start;
-  overflow-x: auto;
-  margin: 0;
-}
-
-.listSpecialists::-webkit-scrollbar {
-  display: none;
-}
