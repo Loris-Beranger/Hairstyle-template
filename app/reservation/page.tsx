@@ -1,5 +1,6 @@
 'use client'
 
+import { useSession } from 'next-auth/react'
 import React, { useState } from 'react'
 import Bottom from '../../components/Bottom/Bottom'
 import Header from '../../components/Header/Header'
@@ -10,9 +11,18 @@ import { hours, specialists } from './Calendar/data'
 import styles from './page.module.css'
 
 const Reservation = () => {
+  const { data: session } = useSession()
+  const user = session?.user
   const [selectHour, setSelectHour] = useState('')
+  const [selectDay, setSelectDay] = useState<any>(null)
   const [listHours, setListHours] = useState([])
   const [selectSpecialist, setSelectSpecialist] = useState('')
+
+  const serviceId = location.search.replace('?id=', '')
+
+  const setOrderStorage = (storageKey: string, value: {}) => {
+    localStorage.setItem(storageKey, JSON.stringify(value))
+  }
 
   return (
     <div className={styles.reservationContainer}>
@@ -26,7 +36,7 @@ const Reservation = () => {
       <div className={styles.mainContentReservation}>
         <section className={styles.sectionCalendar}>
           <h4 className={styles.sectionTitle}>Select Date</h4>
-          <Calendar setListHours={setListHours} />
+          <Calendar setListHours={setListHours} setSelectDay={setSelectDay} />
         </section>
         <section className={styles.sectionTime}>
           <h4 className={styles.sectionTitle}>Select Time</h4>
@@ -52,7 +62,19 @@ const Reservation = () => {
           {/* <SpecialistList /> */}
         </section>
       </div>
-      <Bottom href="/" label={'Continue'} />
+      <Bottom
+        href="/order"
+        label={'Continue'}
+        action={() =>
+          setOrderStorage('test', {
+            service: serviceId,
+            date: selectDay,
+            user: user,
+            status: 'come',
+            specialistId: 'claire',
+          })
+        }
+      />
     </div>
   )
 }

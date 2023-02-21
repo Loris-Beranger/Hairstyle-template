@@ -10,20 +10,87 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  Order         Order[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
 model Order {
   id           String      @id @default(cuid())
   date         DateTime
-  user         String
-  prestation   String
-  duration     Int
-  status       String
+  user         User?       @relation(fields: [userId], references: [id])
+  userId       String?
+  service      Service?    @relation(fields: [serviceId], references: [id])
+  serviceId    String?
+  duration     Int?
+  status       String?
   specialist   Specialist? @relation(fields: [specialistId], references: [id])
   specialistId String?
 }
 
 model Specialist {
-  id    String  @id @default(cuid())
-  name  String
-  image String
-  Order Order[]
+  id       String     @id @default(cuid())
+  name     String
+  image    String     @db.VarChar(255)
+  Order    Order[]
+  Calandar Calandar[]
+}
+
+model Service {
+  id       String  @id @default(cuid())
+  name     String
+  duration String
+  price    Int
+  gender   Int
+  image    String
+  Order    Order[]
+}
+
+model Calandar {
+  id           String      @id @default(cuid())
+  date         DateTime
+  specialist   Specialist? @relation(fields: [specialistId], references: [id])
+  specialistId String?
+  plage        Json
 }

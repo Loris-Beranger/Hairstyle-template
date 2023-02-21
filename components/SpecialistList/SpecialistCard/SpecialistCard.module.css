@@ -18,6 +18,8 @@
   height: 80px;
   border-radius: 14px;
   background-color: #ded7d1;
+  background-position: 0 0;
+  background-size: cover;
 }
 
 .specialistName {

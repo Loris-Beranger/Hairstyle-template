@@ -9,17 +9,16 @@ import { Spin } from 'react-cssfx-loading'
 
 interface calendarProps {
   setListHours: (value: []) => void
+  setSelectDay: (value: Date) => void
 }
 
-const Calendar = ({ setListHours }: calendarProps) => {
+const Calendar = ({ setListHours, setSelectDay }: calendarProps) => {
   const { data, isLoading } = GetCalendar()
   const [calendarPage, setCalendarPage] = useState(0)
   const calendar = data?.data.calendar[calendarPage]
 
   const dateNow = new Date()
   const currentDay = dateNow.getDate()
-
-  console.log(calendar)
 
   const [select, setSelect] = useState(currentDay)
 
@@ -92,6 +91,7 @@ const Calendar = ({ setListHours }: calendarProps) => {
               if (!day.isOut) {
                 setSelect(day.number)
                 setListHours(day.plage)
+                setSelectDay(day)
               }
             }}
           >

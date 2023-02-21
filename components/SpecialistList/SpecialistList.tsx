@@ -8,8 +8,6 @@ interface SpecialistListProps {
 }
 
 const SpecialistList: any = ({ data }: SpecialistListProps) => {
-  console.log(data)
-
   return (
     <ul className={styles.listSpecialists}>
       {data.map(
@@ -17,7 +15,7 @@ const SpecialistList: any = ({ data }: SpecialistListProps) => {
           specialist: { id: string; name: string; image: string },
           index: number
         ) => (
-          <SpecialistCard key={index} name={specialist.name} selected={false} />
+          <SpecialistCard key={index} data={specialist} selected={false} />
         )
       )}
     </ul>

@@ -24,3 +24,9 @@
   text-transform: uppercase;
   color: #ffffff;
 }
+
+.bottomButtonDisable {
+  background: #fb750035;
+  pointer-events: none;
+  cursor: default;
+}

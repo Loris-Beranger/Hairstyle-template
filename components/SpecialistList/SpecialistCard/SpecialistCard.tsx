@@ -4,13 +4,13 @@ import React from 'react'
 import styles from './SpecialistCard.module.css'
 
 interface specialistCardProps {
-  name: string
+  data: { name: string; image: string }
   selected: boolean
   setSelectSpecialist: (name: string) => void
 }
 
 const SpecialistCard = ({
-  name,
+  data,
   selected,
   setSelectSpecialist,
 }: specialistCardProps) => {
@@ -21,9 +21,14 @@ const SpecialistCard = ({
           ? styles.specialistSelect + ' ' + styles.specialist
           : styles.specialist
       }
-      onClick={() => setSelectSpecialist(name)}
+      onClick={() => setSelectSpecialist(data.name)}
     >
-      <div className={styles.imageSpecialist}></div>
+      <div
+        className={styles.imageSpecialist}
+        style={{
+          backgroundImage: `url(${data.image})`,
+        }}
+      ></div>
       <span
         className={
           selected === true
@@ -31,7 +36,7 @@ const SpecialistCard = ({
             : styles.specialistName
         }
       >
-        {name}
+        {data.name}
       </span>
     </li>
   )

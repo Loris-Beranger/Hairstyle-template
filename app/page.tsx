@@ -11,7 +11,6 @@ import { prisma } from '../components/data'
 
 export default async function Home() {
   const specialists = await prisma.specialist.findMany()
-  console.log(specialists)
 
   return (
     <div className={styles.homeContainer}>
